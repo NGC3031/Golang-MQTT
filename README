@@ -10,10 +10,5 @@ current status >50 or <=50.
 Finally the struct is updated with the latest level number which is the pushed to the client.
 The client itself is fairly basic using just a simple bootstrap template and a meter element. Again trying to keep it as
  simple and lightweight as possible. This can easily be customised and developed further to suit specific devices.
-Without knowing any specific details this was kept as generic as possible.
-The code can also be easily upgraded to push additional readings to the client through JSON if needed. Although that was
-not done at this point, it would be assumed that there would be additional display data being sent to the client in a real
-world application.
 
-All working, but testing has not been completed as no time at this point.
 Scott Douglass.
