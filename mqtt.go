@@ -23,10 +23,10 @@ func main() {
     c := make(chan os.Signal, 1)
     signal.Notify(c, os.Interrupt, syscall.SIGTERM)
 
-    opts := MQTT.NewClientOptions().AddBroker("tcp://localhost:1883")
-    opts.SetClientID("test")
+    opts := MQTT.NewClientOptions().AddBroker("tcp://test.mosquitto.org:1883")
+    opts.SetClientID("wildcard")
     opts.SetDefaultPublishHandler(f)
-    topic := "device/batt"
+    topic := "#"
 
     opts.OnConnect = func(c MQTT.Client) {
             if token := c.Subscribe(topic, 0, f); token.Wait() && token.Error() != nil {
